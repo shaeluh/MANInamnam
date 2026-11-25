@@ -16,6 +16,7 @@ function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'Our Story', href: '#story' },
     { name: 'Our Product', href: '#product' },
+    { name: 'Bundle Deals', href: '#promos' },
   ]
 
   return (
@@ -37,7 +38,7 @@ function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm text-[#6c4e3e] transition-colors duration-300 hover:text-[#a47864]"
+              className="text-base text-[#6c4e3e] transition-colors duration-300 hover:text-[#a47864]"
             >
               {link.name}
             </a>
@@ -45,7 +46,7 @@ function Navbar() {
 
          <a
         href="#contact"
-        className="group inline-flex items-center gap-3 rounded-full bg-[#5A4032] px-8 py-4 text-sm font-medium shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#A47864] hover:shadow-xl active:translate-y-0 active:scale-[0.98]"
+        className="group inline-flex items-center gap-3 rounded-full bg-[#5A4032] px-8 py-4 text-base font-medium shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#A47864] hover:shadow-xl active:translate-y-0 active:scale-[0.98]"
         style={{ color: "#FAEAD8" }}
         >
         <span style={{ color: "#FAEAD8" }}>Message Us</span>
@@ -72,7 +73,7 @@ function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm text-[#5a4032]"
+                className="text-base text-[#5a4032]"
               >
                 {link.name}
               </a>
@@ -81,7 +82,7 @@ function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="flex w-fit items-center gap-2 rounded-full bg-[#5a4032] px-5 py-3 text-sm text-[#faead8]"
+              className="flex w-fit items-center gap-2 rounded-full bg-[#5a4032] px-5 py-3 text-base text-[#faead8]"
             >
               Message Us <ArrowUpRight size={16} />
             </a>
@@ -117,7 +118,7 @@ function Hero() {
             </p>
           </div>
 
-          <h1 className="font-serif text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.95] tracking-[-0.06em] text-[#4b3023]">
+          <h1 className="font-serif text-[clamp(3.25rem,8vw,7.5rem)] leading-[0.95] tracking-[-0.06em] text-[#4b3023]">
             A little
             <br />
             <span className="italic font-medium text-[#a47864]">crunch,</span>
@@ -126,14 +127,15 @@ function Hero() {
           </h1>
 
           <p className="mt-8 max-w-md text-base leading-8 text-[#80624f] md:text-lg">
-            Good peanuts, golden garlic, and a flavor worth coming back for.
-            Your new favorite snack starts here.
+            Meet your new favorite snack — crunchy peanuts tossed with crispy
+            fried garlic and our special seasoning. A delicious little treat
+            made for everyday cravings and moments worth sharing.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#product"
-              className="group flex items-center gap-3 rounded-full bg-[#5a4032] px-7 py-4 text-sm transition-all duration-300 hover:bg-[#a47864] hover:shadow-xl"
+              className="group flex items-center gap-3 rounded-full bg-[#5a4032] px-7 py-4 text-base transition-all duration-300 hover:bg-[#a47864] hover:shadow-xl"
               style={{ color: "#faead8" }}
               >
               <span style={{ color: "#faead8" }}>
@@ -149,7 +151,7 @@ function Hero() {
 
             <a
               href="#story"
-              className="flex items-center gap-2 px-4 py-3 text-sm text-[#6c4e3e] transition hover:text-[#a47864]"
+              className="flex items-center gap-2 px-4 py-3 text-base text-[#6c4e3e] transition hover:text-[#a47864]"
             >
               Get to know us
               <ArrowDown size={15} />
@@ -204,7 +206,7 @@ function Hero() {
 
             {/* Floating note */}
             <div className="absolute left-5 top-8 rotate-[-8deg] rounded-xl bg-[#faead8] px-4 py-3 shadow-lg md:left-8 md:top-12">
-              <p className="font-serif text-sm italic text-[#5a4032]">
+              <p className="font-serif text-base italic text-[#5a4032]">
                 made with love ♡
               </p>
             </div>
@@ -401,7 +403,7 @@ function GoodStuff() {
                 {feature.title}
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-[#80624f]">
+              <p className="mt-4 text-base leading-7 md:text-lg md:leading-8 text-[#80624f]">
                 {feature.description}
               </p>
 
@@ -447,11 +449,26 @@ function ProductShowcase() {
             <span className="italic text-[#e8bfa2]">crunch.</span>
           </h2>
 
-          <p className="mt-8 max-w-lg text-base leading-8 text-[#faead8]/75">
-            A delicious combination of premium peanuts, golden fried garlic,
-            and a flavorful special seasoning. The perfect balance of crunch
-            and savory goodness for every craving.
+          <p className="mt-8 max-w-lg text-base leading-8 text-[#faead8]/85">
+            Enjoy the irresistible combination of crunchy peanuts, golden
+            fried garlic, and our special seasoning. Whether you're enjoying
+            a quick snack, sharing with friends, or preparing giveaways,
+            MANInamnam brings a little more flavor to every moment.
           </p>
+
+          <div className="mt-8 flex items-center gap-4">
+  <div>
+    <p className="text-xs tracking-[0.2em] text-[#e8bfa2]">
+      YOUR EVERYDAY CRUNCH
+    </p>
+    <p className="mt-1 font-serif text-4xl text-[#faead8]">
+      ₱100
+      <span className="ml-2 font-sans text-base text-[#faead8]/70">
+        / 250g jar
+      </span>
+    </p>
+  </div>
+</div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             {['Crunchy', 'Savory', 'Flavorful'].map((tag) => (
@@ -466,7 +483,7 @@ function ProductShowcase() {
 
           <a
           href="#contact"
-          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[#faead8] px-7 py-4 text-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#e8bfa2] hover:gap-5 hover:shadow-lg"
+          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[#faead8] px-7 py-4 text-base transition-all duration-300 hover:-translate-y-1 hover:bg-[#e8bfa2] hover:gap-5 hover:shadow-lg"
           style={{ color: "#5a4032" }}
           >
              <span style={{ color: "#5a4032" }}>Get yours today</span>
@@ -523,13 +540,121 @@ function ProductShowcase() {
 }
 
 
+function BundleDeals() {
+  const deals = [
+    {
+      label: 'SHARING IS CARING',
+      title: 'Buy 10, Get 1 FREE',
+      description:
+        'Get an extra jar when you purchase 10 jars of MANInamnam. More crunch to share!',
+      highlight: '11 JARS IN TOTAL',
+      icon: '🥜',
+    },
+    {
+      label: 'BULK ORDER SPECIAL',
+      title: 'FREE Delivery',
+      description:
+        'Order 20 jars and enjoy free delivery. Perfect for events, giveaways, and resellers!',
+      highlight: 'WHEN YOU BUY 20 JARS',
+      icon: '🛵',
+    },
+  ]
+
+  return (
+    <section
+      id="promos"
+      className="bg-[#faead8] px-6 py-24 md:px-12 md:py-32"
+    >
+      <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="mb-5 text-xs font-semibold tracking-[0.3em] text-[#a47864]">
+            MORE TO LOVE
+          </p>
+
+          <h2 className="font-serif text-5xl leading-tight text-[#4b3023] md:text-7xl">
+            More crunch,
+            <br />
+            <span className="italic text-[#a47864]">
+              more savings.
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-lg leading-8 text-[#80624f]">
+            Good things are even better when shared. Enjoy our special
+            bundle deals on your next MANInamnam order.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          {deals.map((deal, index) => (
+            <motion.div
+              key={deal.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -6 }}
+              className="rounded-[2rem] border border-[#a47864]/20 bg-[#f3e2ce] p-8 transition-all duration-300 hover:shadow-xl md:p-10"
+            >
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-semibold tracking-[0.2em] text-[#a47864]">
+                  {deal.label}
+                </p>
+
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#e8bfa2] text-2xl">
+                  {deal.icon}
+                </span>
+              </div>
+
+              <h3 className="mt-10 font-serif text-3xl text-[#4b3023] md:text-4xl">
+                {deal.title}
+              </h3>
+
+              <p className="mt-4 max-w-md text-base leading-7 md:text-lg md:leading-8 text-[#80624f]">
+                {deal.description}
+              </p>
+
+              <div className="mt-8 border-t border-[#a47864]/20 pt-5">
+                <p className="text-xs font-semibold tracking-[0.2em] text-[#8e6b56]">
+                  {deal.highlight}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-xs text-[#8e6b56]">
+          Delivery arrangements and availability are subject to location.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+
 function Occasions() {
   const occasions = [
-    { emoji: '☕', title: 'Slow mornings', text: 'Pair it with your favorite drink.' },
-    { emoji: '🎉', title: 'Gatherings', text: 'A snack everyone can share.' },
-    { emoji: '🎁', title: 'Little gifts', text: 'A thoughtful treat for someone.' },
-    { emoji: '🍿', title: 'Everyday cravings', text: 'Because snack time can happen anytime.' },
-  ]
+  {
+    emoji: '☕',
+    title: 'Office Breaks',
+    text: 'Enjoy a flavorful snack during busy workdays or share a jar with your colleagues.',
+  },
+  {
+    emoji: '👨‍👩‍👧‍👦',
+    title: 'Family & Friends',
+    text: 'Bring everyone together with a crunchy and savory treat worth sharing.',
+  },
+  {
+    emoji: '🎁',
+    title: 'Gifts & Giveaways',
+    text: 'A delicious and affordable giveaway for birthdays, company events, and celebrations.',
+  },
+  {
+    emoji: '📦',
+    title: 'Reseller Orders',
+    text: 'Stock up on MANInamnam and share its irresistible flavor with more customers.',
+  },
+]
 
   return (
     <section className="bg-[#f3e2ce] px-6 py-28 md:px-12 md:py-32">
@@ -548,8 +673,9 @@ function Occasions() {
           </div>
 
           <p className="max-w-md leading-8 text-[#80624f]">
-            From simple afternoon cravings to celebrations with your favorite
-            people, there's always a reason to share something delicious.
+            Whether it's a quick office break, a family gathering, or a
+            special celebration, MANInamnam makes every moment a little
+            more flavorful.
           </p>
         </div>
 
@@ -572,7 +698,7 @@ function Occasions() {
                 {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-[#80624f]">
+              <p className="mt-3 text-base leading-7 md:text-lg md:leading-8 text-[#80624f]">
                 {item.text}
               </p>
             </motion.div>
@@ -626,10 +752,10 @@ function PromoVideo() {
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 flex justify-between">
-            <span className="text-[10px] tracking-[0.2em] text-[#faead8]/70">
+            <span className="text-xs tracking-[0.2em] text-[#faead8]/70">
               MANInamnam
             </span>
-            <span className="text-[10px] tracking-[0.2em] text-[#faead8]/70">
+            <span className="text-xs tracking-[0.2em] text-[#faead8]/70">
               PROMOTIONAL VIDEO
             </span>
           </div>
@@ -670,15 +796,59 @@ function ContactSection() {
         </h2>
 
         <p className="mx-auto mt-7 max-w-xl text-base leading-8 text-[#6c4e3e]">
-          We've got just the crunch for you. Send us a message and
-          let's make your next snack moment a delicious one.
+          Ready for a little crunch? Send us a message to place your order,
+          ask about our bundle promos, or arrange your preferred delivery
+          option. We'd love to make your next snack moment delicious!
         </p>
+
+        <div className="mx-auto mt-10 grid max-w-2xl gap-4 text-left sm:grid-cols-2">
+
+  {/* Payment Options */}
+  <div className="rounded-[1.5rem] border border-[#6c4e3e]/15 bg-[#faead8]/50 p-6">
+    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#faead8] text-xl">
+      💳
+    </div>
+
+    <h3 className="font-serif text-xl text-[#4b3023]">
+      Payment Options
+    </h3>
+
+    <ul className="mt-4 space-y-2 text-base text-[#6c4e3e]">
+      <li>• GCash</li>
+      <li>• Bank Transfer</li>
+      <li>• Cash / Personal Payment</li>
+    </ul>
+  </div>
+
+  {/* Delivery Options */}
+  <div className="rounded-[1.5rem] border border-[#6c4e3e]/15 bg-[#faead8]/50 p-6">
+    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#faead8] text-xl">
+      🛵
+    </div>
+
+    <h3 className="font-serif text-xl text-[#4b3023]">
+      Delivery Options
+    </h3>
+
+    <ul className="mt-4 space-y-2 text-base leading-6 text-[#6c4e3e]">
+      <li>• Same-day delivery for nearby areas, subject to availability</li>
+      <li>• Meet-up or pick-up</li>
+      <li>• Delivery charge: ₱107, depending on location</li>
+    </ul>
+  </div>
+
+</div>
+
+<p className="mx-auto mt-5 max-w-xl text-xs leading-6 text-[#8e6b56]">
+  Message us on Facebook before ordering to confirm delivery
+  fees, schedules, and available locations.
+</p>
 
         <a
         href="https://www.facebook.com/share/1dcFvXoJhr/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group mx-auto mt-9 inline-flex items-center gap-3 rounded-full bg-[#5a4032] px-8 py-4 text-sm transition-all duration-300 hover:bg-[#4b3023] hover:-translate-y-1 hover:shadow-xl"
+        className="group mx-auto mt-9 inline-flex items-center gap-3 rounded-full bg-[#5a4032] px-8 py-4 text-base transition-all duration-300 hover:bg-[#4b3023] hover:-translate-y-1 hover:shadow-xl"
         style={{ color: "#FAEAD8" }}
         >
           <MessageCircle
@@ -718,7 +888,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-[#faead8]/70">
+          <div className="flex flex-wrap gap-6 text-base text-[#faead8]/70">
             <a href="#home" className="transition hover:text-[#e8bfa2]">Home</a>
             <a href="#story" className="transition hover:text-[#e8bfa2]">Our Story</a>
             <a href="#product" className="transition hover:text-[#e8bfa2]">Our Product</a>
@@ -744,6 +914,7 @@ function App() {
       <OurStory />
       <GoodStuff />
       <ProductShowcase />
+      <BundleDeals />
       <Occasions />
       <PromoVideo />
       <ContactSection />
