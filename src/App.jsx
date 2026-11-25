@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import {
   ArrowDown,
   ArrowUpRight,
@@ -65,30 +65,64 @@ function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="border-t border-[#6c4e3e]/10 bg-[#faead8] px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-base text-[#5a4032]"
-              >
-                {link.name}
-              </a>
-            ))}
+      
+{/* Mobile menu */}
+<AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      key="mobile-navigation"
+      initial={{ opacity: 0, y: -15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{
+        duration: 0.3,
+        ease: 'easeInOut',
+      }}
+      className="overflow-hidden border-t border-[#6c4e3e]/10 bg-[#faead8] px-6 py-6 shadow-lg md:hidden"
+    >
+      <div className="flex flex-col gap-5">
+        {navLinks.map((link, index) => (
+          <motion.a
+            key={link.name}
+            href={link.href}
+            onClick={() => setMenuOpen(false)}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.25,
+              delay: index * 0.06,
+            }}
+            className="text-base text-[#5a4032] transition-colors duration-300 hover:text-[#a47864]"
+          >
+            {link.name}
+          </motion.a>
+        ))}
 
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="flex w-fit items-center gap-2 rounded-full bg-[#5a4032] px-5 py-3 text-base text-[#faead8]"
-            >
-              Message Us <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </div>
-      )}
+        <motion.a
+          href="#contact"
+          onClick={() => setMenuOpen(false)}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.25,
+            delay: navLinks.length * 0.06,
+          }}
+          className="flex w-fit items-center gap-2 rounded-full bg-[#5a4032] px-6 py-4 text-base font-medium transition-all duration-300 hover:bg-[#a47864] hover:shadow-lg"
+          style={{ color: "#faead8" }}
+        >
+          <span style={{ color: "#faead8" }}>
+            Message Us
+          </span>
+
+          <ArrowUpRight
+            size={18}
+            style={{ color: "#faead8" }}
+          />
+        </motion.a>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   )
 }
