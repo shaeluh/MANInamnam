@@ -230,17 +230,17 @@ function Hero() {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="relative z-10 flex h-[68%] w-[72%] items-center justify-center md:h-[72%] md:w-[65%]"
+              className="relative z-10 flex h-[65%] w-[82%] items-center justify-center md:h-[72%] md:w-[65%]"
             >
               <img
                 src="/maninamnam-jar.png"
                 alt="MANInamnam crunchy peanuts, 250g jar"
-                className="h-full w-full object-contain drop-shadow-2xl"
+                className="h-full w-full max-h-[430px] object-contain drop-shadow-2xl"
               />
             </motion.div>
 
-            <div className="mt-2 rounded-full bg-[#faead8]/80 px-5 py-2 backdrop-blur-md">
-              <span className="text-xs tracking-[0.2em] text-[#5a4032]">
+            <div className="relative z-20 mt-2 -translate-y-8 rounded-full bg-[#faead8]/80 px-5 py-2 backdrop-blur-md md:translate-y-0">
+              <span className="whitespace-nowrap text-[10px] tracking-[0.16em] text-[#5a4032] md:text-xs md:tracking-[0.2em]">
                 THE PERFECT CRUNCH
               </span>
             </div>
@@ -255,12 +255,12 @@ function Hero() {
             </div>
 
             {/* Bottom label */}
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+            <div className="absolute bottom-5 left-4 right-4 flex items-end justify-between gap-2 md:bottom-6 md:left-6 md:right-6">
               <div>
                 <p className="text-[10px] tracking-[0.25em] text-[#6c4e3e]/70">
                   MANInamnam
                 </p>
-                <p className="font-serif text-2xl text-[#5a4032]">
+                <p className="font-serif text-xl text-[#5a4032] md:text-2xl">
                   Crunchy goodness.
                 </p>
               </div>
@@ -504,17 +504,17 @@ function ProductShowcase() {
           </p>
 
           <div className="mt-8 flex items-center gap-4">
-  <div>
-    <p className="text-xs tracking-[0.2em] text-[#e8bfa2]">
-      YOUR EVERYDAY CRUNCH
-    </p>
-    <p className="mt-1 font-serif text-4xl text-[#faead8]">
-      ₱100
-      <span className="ml-2 font-sans text-base text-[#faead8]/70">
-        / 250g jar
-      </span>
-    </p>
-  </div>
+            <div>
+              <p className="text-xs tracking-[0.2em] text-[#e8bfa2]">
+                YOUR EVERYDAY CRUNCH
+              </p>
+              <p className="mt-1 font-serif text-4xl text-[#faead8]">
+                ₱100
+                <span className="ml-2 font-sans text-base text-[#faead8]/70">
+                  / 250g jar
+                </span>
+              </p>
+            </div>
 </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -555,6 +555,7 @@ function ProductShowcase() {
 
             <div className="absolute h-[75%] w-[75%] rounded-full bg-[#e8bfa2]/30 blur-2xl" />
            
+            
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{
@@ -567,10 +568,9 @@ function ProductShowcase() {
               <img
                 src="/maninamnam-jar.png"
                 alt="MANInamnam Original 250g jar"
-                className="h-full max-h-[430px] w-[72%] max-w-[340px] object-contain drop-shadow-2xl"
+                className="h-auto max-h-[250px] w-[65%] object-contain drop-shadow-2xl sm:max-h-[350px] sm:w-[70%] md:max-h-[430px] md:w-[72%]"
               />
             </motion.div>
-
 
             <div className="absolute left-8 top-8 rounded-full bg-[#faead8] px-4 py-3 text-[#5a4032] shadow-lg">
               <p className="text-[10px] tracking-[0.2em]">100% CRUNCH</p>
