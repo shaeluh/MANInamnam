@@ -23,14 +23,13 @@ function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-[#6c4e3e]/10 bg-[#faead8]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-6 md:px-12">
         {/* Brand */}
-        <a href="#home" className="group flex flex-col">
-          <span className="font-serif text-2xl font-bold tracking-tight text-[#4b3023]">
-            MANInamnam<span className="text-[#a47864]">.</span>
-          </span>
-          <span className="text-[9px] tracking-[0.25em] text-[#8e6b56]">
-            CRUNCHY · SAVORY · ADDICTIVE
-          </span>
-        </a>
+        <a href="#home" className="flex items-center">
+  <img
+    src="/maninamnam-logo.jpg"
+    alt="MANInamnam - Crunchy, Savory, Addictive"
+    className="h-14 w-14 rounded-full object-contain md:h-16 md:w-16"
+  />
+</a>
 
         {/* Desktop navigation */}
         <div className="hidden items-center gap-10 md:flex">
@@ -223,20 +222,30 @@ function Hero() {
             <div className="absolute inset-5 rounded-t-[48%] rounded-b-[1.5rem] border border-[#faead8]/40" />
 
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <motion.div
-                animate={{ y: [0, -10, 0], rotate: [-4, 2, -4] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="text-[clamp(8rem,20vw,15rem)] drop-shadow-xl"
-              >
-                🥜
-              </motion.div>
+              
+            <motion.div
+              animate={{ y: [0, -10, 0], rotate: [-2, 1, -2] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              className="relative z-10 flex h-[68%] w-[72%] items-center justify-center md:h-[72%] md:w-[65%]"
+            >
+              <img
+                src="/maninamnam-jar.png"
+                alt="MANInamnam crunchy peanuts, 250g jar"
+                className="h-full w-full object-contain drop-shadow-2xl"
+              />
+            </motion.div>
 
-              <div className="mt-2 rounded-full bg-[#faead8]/80 px-5 py-2 backdrop-blur-md">
-                <span className="text-xs tracking-[0.2em] text-[#5a4032]">
-                  THE PERFECT CRUNCH
-                </span>
-              </div>
+            <div className="mt-2 rounded-full bg-[#faead8]/80 px-5 py-2 backdrop-blur-md">
+              <span className="text-xs tracking-[0.2em] text-[#5a4032]">
+                THE PERFECT CRUNCH
+              </span>
             </div>
+            </div>
+
 
             {/* Floating note */}
             <div className="absolute left-5 top-8 rotate-[-8deg] rounded-xl bg-[#faead8] px-4 py-3 shadow-lg md:left-8 md:top-12">
