@@ -301,7 +301,11 @@ function OurStory() {
             <div className="absolute inset-6 rounded-[1.5rem] border border-[#faead8]/50" />
 
             <div className="text-center">
-              <span className="text-8xl md:text-[10rem]">🥜</span>
+              <img
+                src="/maninamnam-ingredients.png"
+                alt="Roasted peanuts with crispy fried garlic"
+                className="w-[85%] max-w-[520px] object-contain drop-shadow-xl"
+              />
               <p className="mt-4 font-serif text-3xl italic text-[#5a4032]">
                 made with love.
               </p>
@@ -550,14 +554,23 @@ function ProductShowcase() {
             <div className="absolute inset-5 rounded-[2.5rem] border border-[#faead8]/30" />
 
             <div className="absolute h-[75%] w-[75%] rounded-full bg-[#e8bfa2]/30 blur-2xl" />
-
+           
             <motion.div
-              animate={{ rotate: [0, 3, -3, 0], scale: [1, 1.03, 1] }}
-              transition={{ duration: 6, repeat: Infinity }}
-              className="relative text-[clamp(10rem,25vw,18rem)] drop-shadow-2xl"
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              className="relative z-10 flex w-full flex-1 items-center justify-center"
             >
-              🥜
+              <img
+                src="/maninamnam-jar.png"
+                alt="MANInamnam Original 250g jar"
+                className="h-full max-h-[430px] w-[72%] max-w-[340px] object-contain drop-shadow-2xl"
+              />
             </motion.div>
+
 
             <div className="absolute left-8 top-8 rounded-full bg-[#faead8] px-4 py-3 text-[#5a4032] shadow-lg">
               <p className="text-[10px] tracking-[0.2em]">100% CRUNCH</p>
