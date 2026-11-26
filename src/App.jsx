@@ -744,10 +744,14 @@ function Occasions() {
 }
 
 
+
 function PromoVideo() {
+  const [isPlaying, setIsPlaying] = useState(false)
+
   return (
     <section className="bg-[#faead8] px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto max-w-[1440px]">
+
         <div className="mb-12 text-center">
           <p className="mb-5 text-xs font-semibold tracking-[0.3em] text-[#a47864]">
             A CLOSER LOOK
@@ -756,48 +760,35 @@ function PromoVideo() {
           <h2 className="font-serif text-5xl text-[#4b3023] md:text-7xl">
             See what makes
             <br />
-            <span className="italic text-[#a47864]">us irresistible.</span>
+            <span className="italic text-[#a47864]">
+              us irresistible.
+            </span>
           </h2>
         </div>
 
-        <motion.div
-          whileHover={{ scale: 1.01 }}
-          className="relative mx-auto flex aspect-video max-h-[650px] items-center justify-center overflow-hidden rounded-[2rem] bg-[#5a4032]"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#a47864] via-[#6c4e3e] to-[#4b3023]" />
+        <div className="relative mx-auto aspect-video max-h-[650px] overflow-hidden rounded-[2rem] bg-[#5a4032] shadow-xl">
 
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute -left-20 -top-20 h-80 w-80 rounded-full border border-[#faead8]" />
-            <div className="absolute -bottom-40 -right-20 h-[500px] w-[500px] rounded-full border border-[#faead8]" />
-          </div>
+          <video
+            className="h-full w-full object-cover"
+            controls
+            playsInline
+            preload="metadata"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          >
+            <source
+              src="/maninamnam-promo.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support HTML video.
+          </video>
 
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#faead8]/50 bg-[#faead8]/10 text-3xl backdrop-blur-md transition-transform duration-300 hover:scale-110">
-              ▶
-            </div>
-
-            <p className="mt-6 text-xs tracking-[0.25em] text-[#faead8]/80">
-              SOMETHING DELICIOUS IS HERE
-            </p>
-
-            <h3 className="mt-3 font-serif text-3xl text-[#faead8] md:text-5xl">
-              Made to be shared.
-            </h3>
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 flex justify-between">
-            <span className="text-xs tracking-[0.2em] text-[#faead8]/70">
-              MANInamnam
-            </span>
-            <span className="text-xs tracking-[0.2em] text-[#faead8]/70">
-              PROMOTIONAL VIDEO
-            </span>
-          </div>
-        </motion.div>
+        </div>
 
         <p className="mt-5 text-center text-xs text-[#8e6b56]">
           A little preview of the goodness waiting for you.
         </p>
+
       </div>
     </section>
   )
